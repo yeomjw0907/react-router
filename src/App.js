@@ -1,34 +1,26 @@
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import './App.css';
+import Home from "./Home.js"
+import Subpage from "./Subpage.js"
+
 
 function App() {
   return (
     <div className="App">
-      <h1>오늘 끝장 본다</h1>
+      <h1>두번째 단계</h1>
+      <p>이번에도 성공하면 좋겠네</p>
       <BrowserRouter>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <button>
-            <Link to="/beauty">뷰티</Link>
-          </button>
-        </ul>
+        {/*         <Link to="/Home">메인 페이지 돌아가기</Link><br></br> */}
+        <Link to="/subpage">서브페이지 이동하기</Link>
         <Switch>
-          <Route path="/" exact component={Home}></Route>
-          <Route path="/beauty" component={Beauty}></Route>
+          <Route path="/Home" exact component={Home}></Route>
+          <Route path="/subpage" component={Subpage}></Route>
         </Switch>
       </BrowserRouter>
     </div>
   );
 }
 
-function Home() {
-  return <div>Home component</div>;
-}
 
-function Beauty() {
-  return <div>Beauty component</div>;
-}
 
 export default App;
